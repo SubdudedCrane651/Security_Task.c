@@ -4,6 +4,15 @@
 #include <time.h>
 #include <string.h>
 
+void print_all(FILE *fp)
+{
+    int c;
+    char d[1024];
+    while ((c = getc(fp)) != EOF)
+        strncat(d, &c, 1024);
+    // printf("%s",d);
+}
+
 /* Signal Handler for SIGINT */
 void sigint_handler(int sig_num)
 {
@@ -13,6 +22,26 @@ void sigint_handler(int sig_num)
 
     /* Do a graceful cleanup of the program like: free memory/resources/etc and exit */
     exit(0);
+}
+
+char *Security(char *d)
+{
+    char r[1024];;
+    char cmd[1024];
+        snprintf(cmd, sizeof(cmd), "awk '/Failed/ && /%s/ {print $1, $2, $3,$6,$9,$11,$12,$13}' auth.log", d);
+        printf("%s\n",cmd);
+    FILE *fp;
+    int status;
+    if ((fp = popen(cmd,"r")) == NULL)
+        {} else
+        //return "none";
+
+    // print_all(fp);
+    {int c;
+    while ((c = getc(fp)) != EOF)
+        strncat(r, &c, 1);}
+    pclose(fp);
+    return r;
 }
 
 char *Month(int choice) {
@@ -56,15 +85,22 @@ int main ()
 
     /* Infinite loop */
     while(1)
-    {
+    {       
         time_t t = time(NULL);
   struct tm tm = *localtime(&t);
   // printf("now: %d-%02d-%02d %02d:%02d:%02d\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
+      
 // printf("Date and time: %s %d %02d:%02d:%02d\n",Month(tm.tm_mon+1),tm.tm_mday,tm.tm_hour, tm.tm_min, tm.tm_sec);
-      char d[1024];
-      snprintf(d, sizeof(d), "%s %d %d:%d:%d", Month(tm.tm_mon+1), tm.tm_mday,tm.tm_hour, tm.tm_min, tm.tm_sec);
+      // snprintf(d, sizeof(d), "%s %d %d:%d:%d", Month(tm.tm_mon+1), tm.tm_mday,tm.tm_hour, tm.tm_min, tm.tm_sec);
       // d=Month(tm.tm_mon+1);
-      printf(" %s\n",d);
+      char d[1024];
+        // snprintf(d, sizeof(d), "%s %d %d:%d:%d", Month(tm.tm_mon+1), tm.tm_mday,tm.tm_hour, tm.tm_min, tm.tm_sec);
+      snprintf(d,sizeof(d),"%s","May 20 17:41:02");
+      // char *sec=Security(d);
+      char sec[1024];
+      strncpy( sec, Security(d), sizeof( sec ) );
+printf("%s\n",sec);
+      printf("%s\n",d);
     }
     return 0;
 }
