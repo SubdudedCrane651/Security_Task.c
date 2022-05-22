@@ -113,7 +113,6 @@ int main() {
     // tm.tm_sec); snprintf(d, sizeof(d), "%s %d %d:%d:%d", Month(tm.tm_mon+1),
     // tm.tm_mday,tm.tm_hour, tm.tm_min, tm.tm_sec); d=Month(tm.tm_mon+1);
     char d[1024];
-        char d[1024];
         char day[20];
         char hour[20];
         char minute[20];
