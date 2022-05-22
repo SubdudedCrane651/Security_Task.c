@@ -3,27 +3,27 @@
     "main.c": [
       {
         "id": "45e05b79-83c5-41d9-8b0e-c05326246cbe",
-        "line": 7,
-        "version": 1024,
-        "index": 98
+        "line": 1,
+        "version": 1148,
+        "index": 0
       },
       {
         "id": "d5649f57-7561-4769-be40-a0abc87fc968",
-        "line": 13,
-        "version": 1024,
-        "index": 218
+        "line": 1,
+        "version": 1148,
+        "index": 0
       },
       {
         "id": "2ab34abd-08a7-448a-818e-064b2854d6cf",
-        "line": 103,
-        "version": 1024,
-        "index": 2658
+        "line": 1,
+        "version": 1148,
+        "index": 0
       },
       {
         "id": "ff16c720-7ecb-4b05-a490-7a6dcd30fcb8",
-        "line": 106,
-        "version": 1024,
-        "index": 2736
+        "line": 1,
+        "version": 1148,
+        "index": 0
       }
     ]
   }
