@@ -113,13 +113,16 @@ int main() {
     // tm.tm_sec); snprintf(d, sizeof(d), "%s %d %d:%d:%d", Month(tm.tm_mon+1),
     // tm.tm_mday,tm.tm_hour, tm.tm_min, tm.tm_sec); d=Month(tm.tm_mon+1);
     char d[1024];
+        char d[1024];
+        char day[20];
         char hour[20];
         char minute[20];
         char second[20];
+        sprintf(day,"% 2d",tm.tm_mday);
         sprintf(hour, "%02d",tm.tm_hour);
         sprintf(minute, "%02d",tm.tm_min);
         sprintf(second, "%02d", tm.tm_sec);
-        //snprintf(d, sizeof(d), "%s %d %s:%s:%s", Month(tm.tm_mon+1), tm.tm_mday,hour, minute, second);
+        //snprintf(d, sizeof(d), "%s %s %s:%s:%s", Month(tm.tm_mon+1), day,hour, minute, second);
     // snprintf(d, sizeof(d), "%s %d %d:%d:%d", Month(tm.tm_mon+1),
     // tm.tm_mday,tm.tm_hour, tm.tm_min, tm.tm_sec);
     snprintf(d, sizeof(d), "%s", "May 20 17:41:02");
