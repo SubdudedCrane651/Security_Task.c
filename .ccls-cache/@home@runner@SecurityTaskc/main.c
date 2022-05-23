@@ -117,7 +117,7 @@ int main() {
         char hour[20];
         char minute[20];
         char second[20];
-        sprintf(day,"% 2d",tm.tm_mday);
+        sprintf(day,"%2d",tm.tm_mday);
         sprintf(hour, "%02d",tm.tm_hour);
         sprintf(minute, "%02d",tm.tm_min);
         sprintf(second, "%02d", tm.tm_sec);
